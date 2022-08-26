@@ -148,10 +148,27 @@ class C_laporan extends CI_Controller {
     {
         $posts = $this->input->post();
         foreach ($posts['item'] as $post) {
+            /**************************************************
+            |   Menghitung EOQ
+            |   Rumus EQO = Akar((2*Demand*bPesan)/bSimpan)
+            |
+            ***************************************************/
             $eoq = round(sqrt((2*$post['demand']*$post['biaya_pesan'])/$post['biaya_simpan']));
+            
+            /**************************************************
+            |   Menghitung barang keluar perhari
+            |   Rumus (Deman*EOQ)
+            |
+            ***************************************************/
             $jumlah_keluar_barang = round($post['demand']/$eoq);
 
             $getAvgPengeluaran = $this->M_barang->get_avg_pengeluaran($post['kd_barang']);
+
+            /**************************************************
+            |   Menghitung ROP berdasarkan Rata rata pengeluaran 
+            |   Rumus ROP = (rata-rata*leadtime) + Safety Stock(EOQ)
+            |
+            ***************************************************/
             $rop = (round($getAvgPengeluaran)*$post['leadtime'])+$eoq;
 
             $data = [

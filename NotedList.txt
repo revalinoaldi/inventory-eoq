@@ -1,0 +1,31 @@
+####################################
+Notulensi : Inventory EOQ & ROP
+####################################
+
+Aplikasi yang di buat menggunakan technologi PHP 8
+dengan framework Codeigniter 3.11
+
+####################################
+Akun : Inventory EOQ & ROP
+####################################
+
+Role as Superadmin 
+Username : superadmin
+Password : superadmin
+
+Role as Admin
+Username : admin
+Password : admin
+
+Role as Barista
+Username : barista
+Password : barista
+
+####################################
+Penjelasan Code : Inventory EOQ & ROP
+####################################
+
+Perhitungan EQO & ROP ada pada : 
+	file controllers/C_laporan.php
+	functio eoq_form_action::147
+	
