@@ -54,7 +54,7 @@
                                     <input type="number" required readonly name="item[<?= $i ?>][leadtime]" class="form-control" value="<?= @$brg->eoq->jarak_tiap_pesan ? $brg->eoq->jarak_tiap_pesan : $brg->leadtime ?>">
                                 </td>
                                 <td>
-                                    <input type="number" required disabled class="form-control" value="<?= @$brg->eoq->frequensi_pesan ? $brg->eoq->frequensi_pesan : 0 ?>">
+                                    <input type="text" required disabled class="form-control" value="<?= @$brg->eoq->frequensi_pesan ? $brg->eoq->frequensi_pesan : 0 ?> <?= $brg->satuan ?>">
                                 </td>
                             </tr>
                         <?php $i++; endforeach ?>

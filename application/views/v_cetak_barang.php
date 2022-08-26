@@ -24,6 +24,13 @@
 }
 </style>
 
+<?php  
+    if (@$export['excel']) {
+        header("Content-Disposition: attachment; filename=Laporan Stok Barang.xls");
+        header("Content-Type: application/vnd.ms-excel");
+    }
+?>
+
 <div class="col-lg-12">
     <div class="card m-b-30">
         <div class="card-body">

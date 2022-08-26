@@ -1,8 +1,7 @@
 <div class="topbar">
-
                         <div class="topbar-left	d-none d-lg-block">
                             <div class="text-center">
-                                <a href="index.html" class="logo"><img src="<?php echo base_url()?>assets/images/log/kawa-coffee.png" height="50" alt="logo"> &nbsp;</a>
+                                <a href="<?= site_url() ?>" class="logo"><img src="<?php echo base_url()?>assets/images/log/kawa-coffee.png" height="50" alt="logo"> &nbsp;</a>
                             </div>
                         </div>
 
@@ -18,14 +17,7 @@
                                 </div>
                             </div>
 
-                            <ul class="list-inline float-right mb-0">
-                                <!-- <li class="list-inline-item dropdown notification-list">
-                                    <a class="nav-link waves-effect toggle-search" href="#"  data-target="#search-wrap">
-                                        <i class="mdi mdi-magnify noti-icon"></i>
-                                    </a>
-                                </li> -->
-
-    
+                            <ul class="list-inline float-right mb-0">    
 
                                 <li class="list-inline-item dropdown notification-list nav-user">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"

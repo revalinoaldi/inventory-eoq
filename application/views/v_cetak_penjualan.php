@@ -38,6 +38,12 @@
         }
     </style>
 </head>
+<?php  
+    if (@$export['excel']) {
+        header("Content-Disposition: attachment; filename=Laporan Penjualan.xls");
+        header("Content-Type: application/vnd.ms-excel");
+    }
+?>
 <body>
     <?php foreach ($get_header as $val) { ?>
     <table width="100%">

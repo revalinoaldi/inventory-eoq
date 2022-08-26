@@ -119,7 +119,6 @@
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $val->kd_barang ?></td>
                     <td><?php echo $val->nama_barang ?></td>
-                    <td><?php echo $val->satuan ?></td>
                     <td><?php echo number_format($val->harga_barang);?></td>
                     <td><?php echo number_format($val->stok_awal,0,',','.')?> <?= $val->satuan ?></td>
                     <td>

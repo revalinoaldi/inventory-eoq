@@ -24,6 +24,13 @@
   }
 </style>
 
+<?php  
+    if (@$export['excel']) {
+        header("Content-Disposition: attachment; filename=Laporan Economic Order Quantity & Reorder Poin.xls");
+        header("Content-Type: application/vnd.ms-excel");
+    }
+?>
+
 <div class="col-lg-12">
     <div class="card m-b-30">
         <div class="card-body">
@@ -44,19 +51,18 @@
                 </thead>
                 <tbody>
                     <?php $i=1; foreach ($barang as $brg): ?>
-                    <tr>
-                        <td><?= $i++; ?></td>
-                        <td><?= $brg->nama_barang; ?></td>
-                        <td><?= number_format($brg->harga_barang); ?></td>
-                        <td><?= $brg->eoq->jumlah_total_pesanan." ".$brg->satuan; ?></td>
-                        <td><?= $brg->leadtime; ?></td>
-                        <td><?= number_format($brg->eoq->biaya_pesan); ?></td>
-                        <td><?= number_format($brg->eoq->biaya_simpan); ?></td>
-                        <td><?= $brg->eoq->frequensi_pesan; ?></td>
-                        <td><?= $brg->eoq->reorder_poin; ?></td>
-
-                    </tr>
-                <?php endforeach ?>
+                        <tr>
+                            <td><?= $i++; ?></td>
+                            <td><?= $brg->nama_barang; ?></td>
+                            <td><?= number_format($brg->harga_barang); ?></td>
+                            <td><?= (@$brg->eoq->jumlah_total_pesanan ? $brg->eoq->jumlah_total_pesanan : 0)." ".$brg->satuan; ?></td>
+                            <td><?= $brg->leadtime; ?></td>
+                            <td><?= @$brg->eoq->biaya_pesan ? number_format($brg->eoq->biaya_pesan) : 0; ?></td>
+                            <td><?= @$brg->eoq->biaya_simpan ? number_format($brg->eoq->biaya_simpan) : 0; ?></td>
+                            <td><?= @$brg->eoq->frequensi_pesan ? $brg->eoq->frequensi_pesan : 0; ?> <?= $brg->satuan ?></td>
+                            <td><?= @$brg->eoq->reorder_poin ? $brg->eoq->reorder_poin : 0; ?> <?= $brg->satuan ?></td>
+                        </tr>
+                    <?php endforeach ?>
             </tbody>
         </table>
 

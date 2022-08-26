@@ -32,7 +32,8 @@
                 <?php }?>
                 </tbody>
             </table>
-            <a href="<?php echo base_url()?>C_laporan/cetak_barang" target="_blank" class="btn btn-info btn-md"><i class="fa fa-print"></i> Cetak Laporan</a><br>         
+            <a href="<?php echo base_url()?>C_laporan/cetak_barang" target="_blank" class="btn btn-info btn-md"><i class="fa fa-print"></i> Cetak Laporan</a>
+            <a href="<?php echo base_url()?>C_laporan/export_excel_barang" target="_blank" class="btn btn-danger btn-md"><i class="fa fa-clipboard" aria-hidden="true"></i> Export Laporan</a><br>         
         </div>
     </div>
 </div> <!-- end col -->
